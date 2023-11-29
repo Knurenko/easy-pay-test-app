@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">EasyPay test app</string>
+
+    <string name="auth_login_label">Login</string>
+    <string name="auth_password_label">Password</string>
+    <string name="auth_button_text">Auth</string>
 </resources>

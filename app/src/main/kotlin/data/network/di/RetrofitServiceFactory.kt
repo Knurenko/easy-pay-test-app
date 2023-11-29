@@ -21,11 +21,6 @@ object RetrofitServiceFactory {
             // it seems to be very NOT_PRODUCTION_LIKE key so I decided not to store it in secure way
             val apiKey = "12345"
 
-//            val urlWithHeader =
-//                chain.request().url.newBuilder().addQueryParameter("app-key", apiKey).build()
-//
-//            val newUrl = chain.request().newBuilder().url(urlWithHeader).build()
-
             val request =
                 chain.request().newBuilder()
                     .header("app-key", apiKey)
