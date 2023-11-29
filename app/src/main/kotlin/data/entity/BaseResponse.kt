@@ -9,5 +9,14 @@ data class BaseResponse<T>(
     @SerializedName("success")
     val success: Boolean,
     @SerializedName("response")
-    val response: T
+    val response: T,
+    @SerializedName("error")
+    val error: ErrorBody?
+)
+
+data class ErrorBody(
+    @SerializedName("error_code")
+    val code: Int,
+    @SerializedName("error_msg")
+    val msg: String
 )
