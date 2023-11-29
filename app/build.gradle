@@ -67,4 +67,7 @@ dependencies {
     implementation "io.insert-koin:koin-core:3.4.0"
     implementation "io.insert-koin:koin-android:3.4.0"
     implementation "io.insert-koin:koin-androidx-compose:3.4.5"
+
+    // navigation
+    implementation 'androidx.navigation:navigation-fragment:2.7.5'
 }
