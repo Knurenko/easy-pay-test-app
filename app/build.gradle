@@ -62,4 +62,9 @@ dependencies {
     debugImplementation "androidx.compose.ui:ui-tooling"
 
     implementation "androidx.constraintlayout:constraintlayout-compose:1.0.1"
+
+    //DI - Koin
+    implementation "io.insert-koin:koin-core:3.4.0"
+    implementation "io.insert-koin:koin-android:3.4.0"
+    implementation "io.insert-koin:koin-androidx-compose:3.4.5"
 }
