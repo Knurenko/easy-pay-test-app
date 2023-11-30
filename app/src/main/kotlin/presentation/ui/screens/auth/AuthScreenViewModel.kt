@@ -30,4 +30,8 @@ class AuthScreenViewModel(
             }
         }
     }
+
+    fun clearState() {
+        viewModelScope.launch { _state.emit(AuthScreenState.Initial) }
+    }
 }

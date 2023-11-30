@@ -8,11 +8,17 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.ViewCompositionStrategy
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.knurenko.easypaytestapp.R
+import data.storage.UserTokenStorage
 
 /**
  * @author Knurenko Bogdan 29.11.2023
  */
-class AuthFragment(private val authScreenViewModel: AuthScreenViewModel) : Fragment() {
+class AuthFragment(
+    private val viewModel: AuthScreenViewModel,
+    private val userTokenStorage: UserTokenStorage
+) : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -21,10 +27,12 @@ class AuthFragment(private val authScreenViewModel: AuthScreenViewModel) : Fragm
         setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed)
         setContent {
             AuthScreen(
-                screenState = authScreenViewModel.state.collectAsState().value,
-                onAuthPress = { login, pass -> authScreenViewModel.performAuth(login, pass) },
+                screenState = viewModel.state.collectAsState().value,
+                onAuthPress = { login, pass -> viewModel.performAuth(login, pass) },
                 onAuthSuccess = {
-                    // todo navigate to another fragment
+                    viewModel.clearState()
+                    userTokenStorage.userToken = it
+                    findNavController().navigate(R.id.action_authFragment_to_paymentFragment)
                 }
             )
         }
