@@ -4,4 +4,10 @@
     <string name="auth_login_label">Login</string>
     <string name="auth_password_label">Password</string>
     <string name="auth_button_text">Auth</string>
+    <string name="payment_item_unknown_date">Unknown date</string>
+    <string name="payment_item_unknown_amount">Unknown amount</string>
+    <string name="payment_list_toolbar_title">Payment list</string>
+    <string name="logout_dialog_message">Are you sure you want to logout?</string>
+    <string name="logout_dialog_yes">Yes</string>
+    <string name="logout_dialog_no">No</string>
 </resources>
